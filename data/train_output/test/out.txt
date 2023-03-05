@@ -1,0 +1,2010 @@
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.01
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[2]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:BN
+norm_cfg:{}
+normConv:No
+normConv_cfg:{}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+1.6030315161  0             0.0100000000  0.2389221557  33.563838481  0.3491501103  0.3681050952 
+0.9816579819  3             0.0100000000  0.3161676647  107.34560227  0.5563917893  0.5541161610 
+0.8359034657  6             0.0100000000  0.4658682635  182.34396934  0.6076769820  0.5895074106 
+0.5752433538  9             0.0100000000  0.4850299401  256.71953034  0.6206615249  0.5622344299 
+0.6045286059  12            0.0100000000  0.6341317365  330.97902417  0.7245958740  0.6819309751 
+0.3953785896  15            0.0100000000  0.5814371257  404.75301361  0.7511486596  0.6718815821 
+0.1939848065  18            0.0100000000  0.5874251497  479.04265379  0.7834862302  0.7343167839 
+0.2496177554  21            0.0100000000  0.5748502994  554.67087221  0.8451275670  0.7557865909 
+0.1675162166  24            0.0100000000  0.6455089820  630.66292452  0.7576373556  0.6933174778 
+0.2570926249  27            0.0100000000  0.6796407186  707.05276918  0.9218973550  0.8187073428 
+0.2114507407  30            0.0100000000  0.6736526946  782.83812165  0.9490109448  0.8237879720 
+0.0690060928  33            0.0100000000  0.6952095808  859.17816162  0.9142402992  0.7988433677 
+0.1354071945  36            0.0100000000  0.6904191617  935.57775640  0.9433362177  0.8218048783 
+0.0970399901  39            0.0100000000  0.7011976048  1011.3940393  0.9506426179  0.8336176350 
+0.0595354736  42            0.0100000000  0.6712574850  1086.2362523  0.9620839066  0.8299115464 
+0.0436676331  45            0.0100000000  0.6425149701  1159.0221970  0.9600396232  0.8312457184 
+0.0415014215  48            0.0100000000  0.6646706587  1231.6845560  0.9697893529  0.8337570510 
+0.0792175308  51            0.0100000000  0.6868263473  1304.2915320  0.8824738714  0.7679231314 
+0.0189658683  54            0.0100000000  0.7131736527  1376.9308450  0.9752898621  0.8342931987 
+0.0679506883  57            0.0100000000  0.6934131737  1449.6326534  0.9904052683  0.8514900870 
+0.0580533780  60            0.0100000000  0.7311377246  1522.3183083  0.9853056508  0.8479683663 
+0.0686417967  63            0.0100000000  0.6467065868  1595.0249934  0.9785578661  0.8358318258 
+0.0434323847  66            0.0100000000  0.7125748503  1667.7012062  0.9759660875  0.8305082473 
+0.0471830964  69            0.0100000000  0.7095808383  1742.2493844  0.9806472557  0.8420695284 
+0.0178922545  72            0.0010000000  0.7179640719  1817.2029161  0.9969956640  0.8673476029 
+0.0249602944  75            0.0010000000  0.7089820359  1893.2446823  0.9992748322  0.8758496486 
+0.0032246802  78            0.0010000000  0.7095808383  1969.1803328  0.9975461084  0.8659059544 
+0.0045144991  81            0.0010000000  0.7083832335  2045.1949145  0.9993262771  0.8713455358 
+0.0024923009  84            0.0010000000  0.7155688623  2117.7226123  0.9989192767  0.8722406356 
+0.0209260229  87            0.0010000000  0.7071856287  2190.5857939  0.9986697769  0.8717142713 
+0.0029202721  90            0.0001000000  0.7077844311  2263.6602361  0.9990253325  0.8733285325 
+0.0116355978  93            0.0001000000  0.7101796407  2336.3643531  0.9991944989  0.8737174524 
+0.0035484247  96            0.0001000000  0.6964071856  2410.0616803  0.9993606109  0.8712784280 
+0.0046507684  99            0.0001000000  0.7035928144  2482.2063944  0.9991944989  0.8743930162 
+valid acc: 0.8758
+DG result: 0.7090
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 12, in get_fea
+    net = networks.get_network(args.net)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/networks.py", line 12, in get_network
+    return globals()[network_name]()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 187, in resnet18
+    model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 115, in __init__
+    self.bn1 = myNorm.Norm(64)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/normalization.py", line 173, in Norm
+    return _config.norm_methods[_config.norm](*args, **kwargs)
+KeyError: 'ITN'
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 464593) is killed by signal: Terminated. 
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 12, in get_fea
+    net = networks.get_network(args.net)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/networks.py", line 12, in get_network
+    return globals()[network_name]()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 187, in resnet18
+    model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 115, in __init__
+    self.bn1 = myNorm.Norm(64)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/normalization.py", line 173, in Norm
+    return _config.norm_methods[_config.norm](*args, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/iterative_normalization_FlexGroup.py", line 136, in __init__
+    num_groups = (self.num_features-1) // self.num_channels + 1
+TypeError: unsupported operand type(s) for //: 'int' and 'NoneType'
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 464838) is killed by signal: Terminated. 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/util.py", line 357, in _exit_function
+    p.join()
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/popen_fork.py", line 47, in wait
+    return self.poll(os.WNOHANG if timeout == 0.0 else 0)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 464860) is killed by signal: Terminated. 
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 12, in get_fea
+    net = networks.get_network(args.net)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/networks.py", line 12, in get_network
+    return globals()[network_name]()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 187, in resnet18
+    model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 115, in __init__
+    self.bn1 = myNorm.Norm(64)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/normalization.py", line 173, in Norm
+    return _config.norm_methods[_config.norm](*args, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/iterative_normalization_FlexGroup.py", line 136, in __init__
+    num_groups = (self.num_features-1) // self.num_channels + 1
+TypeError: unsupported operand type(s) for //: 'int' and 'NoneType'
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 464984) is killed by signal: Terminated. 
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.01
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[2]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:ItN
+norm_cfg:{}
+normConv:No
+normConv_cfg:{}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+1.7058624029  0             0.0100000000  0.3634730539  59.112698078  0.2989670942  0.3095910320 
+0.8922747970  3             0.0100000000  0.4550898204  201.52581620  0.3827406773  0.3729165964 
+0.6841249466  6             0.0100000000  0.5520958084  343.24654626  0.5929845443  0.5642154549 
+0.5453213453  9             0.0100000000  0.4802395210  487.67668843  0.7310317386  0.7152607136 
+0.4807676077  12            0.0100000000  0.5916167665  634.27022457  0.7710160779  0.7186947937 
+0.4795070589  15            0.0100000000  0.6574850299  779.58175039  0.8120103503  0.7533262220 
+0.1762692481  18            0.0100000000  0.6275449102  926.02909755  0.8228401000  0.7494624077 
+0.2650441825  21            0.0100000000  0.6413173653  1071.6107387  0.7928448291  0.7058334459 
+0.1542901248  24            0.0100000000  0.5419161677  1215.9784295  0.7716883751  0.7267153297 
+0.1921338439  27            0.0100000000  0.6377245509  1359.7849493  0.8509756244  0.7638335175 
+0.0629786924  30            0.0100000000  0.7017964072  1503.7937376  0.9552327790  0.8355909453 
+0.0926916301  33            0.0100000000  0.6712574850  1646.2469391  0.9236935775  0.8088712223 
+0.1000096872  36            0.0100000000  0.6610778443  1787.3545913  0.9064527531  0.7961388896 
+0.0254817996  39            0.0100000000  0.6646706587  1928.8589601  0.9204139729  0.8106719199 
+0.0247549247  42            0.0100000000  0.6964071856  2069.5262720  0.9360289175  0.8123565176 
+0.0291298497  45            0.0100000000  0.6724550898  2209.9902274  0.9790778063  0.8483020306 
+0.0805062354  48            0.0100000000  0.7023952096  2350.6560213  0.9572882816  0.8242343134 
+0.0370169394  51            0.0100000000  0.6532934132  2491.4219701  0.9745800845  0.8298860645 
+0.0407916829  54            0.0100000000  0.6916167665  2632.0569341  0.9795758073  0.8442134797 
+0.0480706245  57            0.0100000000  0.7353293413  2772.0555069  0.9848844820  0.8551226102 
+0.0292757209  60            0.0100000000  0.7035928144  2911.3965206  0.9867326548  0.8489891553 
+0.0496842302  63            0.0100000000  0.6850299401  3050.4657380  0.9734897513  0.8220297119 
+0.0179579593  66            0.0100000000  0.7113772455  3189.6787209  0.9821029249  0.8269494836 
+0.0344682224  69            0.0100000000  0.7149700599  3328.9541006  0.9899640458  0.8621646976 
+0.0034747215  72            0.0010000000  0.7071856287  3468.0956885  0.9987445533  0.8700530868 
+0.0300278496  75            0.0010000000  0.7119760479  3607.3033957  0.9990167211  0.8725155244 
+0.0027322641  78            0.0010000000  0.7059880240  3746.6467158  0.9990082214  0.8724132483 
+0.0023233972  81            0.0010000000  0.7125748503  3885.7767407  0.9992288327  0.8788300211 
+0.0031530478  84            0.0010000000  0.7155688623  4024.8898003  0.9996444444  0.8775258170 
+0.0111881727  87            0.0010000000  0.7161676647  4164.1894772  0.9990510549  0.8754405443 
+0.0045956899  90            0.0001000000  0.7203592814  4303.2802188  0.9991313883  0.8794704166 
+0.0287742298  93            0.0001000000  0.7311377246  4442.4983348  0.9995040549  0.8843165259 
+0.0072349063  96            0.0001000000  0.7107784431  4581.7243206  0.9994152218  0.8787277451 
+0.0044182348  99            0.0001000000  0.7149700599  4720.8703379  0.9990167211  0.8810293251 
+valid acc: 0.8843
+DG result: 0.7311
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.01
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[2]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:ItN
+norm_cfg:{}
+normConv:No
+normConv_cfg:{}
+replace_norm:{'pre_norm': 0, 'layer': [1, 2, 3, 4], 'norm_num': [2]}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+1.6708568335  0             0.0100000000  0.2676646707  44.211720466  0.2463692304  0.2750743494 
+0.9949402809  3             0.0100000000  0.2946107784  149.72284245  0.3670383050  0.3997133650 
+0.6823100448  6             0.0100000000  0.4844311377  254.23360347  0.6022214021  0.5975302094 
+0.5697985888  9             0.0100000000  0.5083832335  361.35883712  0.7224522549  0.7163846874 
+0.5861855149  12            0.0100000000  0.5580838323  469.61355876  0.8055616908  0.7728226216 
+0.3672228158  15            0.0100000000  0.6269461078  574.23662590  0.8283547122  0.7510298425 
+0.1881252974  18            0.0100000000  0.5892215569  680.60501050  0.8149113433  0.7551952846 
+0.2758876085  21            0.0100000000  0.5730538922  787.24432277  0.8382978986  0.7478631305 
+0.1405345052  24            0.0100000000  0.5694610778  894.60094189  0.8446394645  0.7701438768 
+0.2087056041  27            0.0100000000  0.6383233533  999.44973707  0.9396256575  0.8213476905 
+0.1284692734  30            0.0100000000  0.6395209581  1106.4466848  0.9331285945  0.8147211650 
+0.1059138402  33            0.0100000000  0.6940119760  1211.1600699  0.9317784098  0.8016785812 
+0.1914056987  36            0.0100000000  0.6491017964  1318.2054152  0.9255494812  0.8117940764 
+0.0307171568  39            0.0100000000  0.6754491018  1421.3845720  0.9708914172  0.8414643012 
+0.0261518676  42            0.0100000000  0.6700598802  1524.5534965  0.9733180823  0.8520685752 
+0.0742045939  45            0.0100000000  0.6658682635  1627.3977024  0.9644853548  0.8479715951 
+0.1134919897  48            0.0100000000  0.6598802395  1730.2567045  0.9704954720  0.8443104582 
+0.0736882463  51            0.0100000000  0.6634730539  1833.2363846  0.9697282981  0.8522093454 
+0.0306714978  54            0.0100000000  0.7011976048  1936.2460224  0.9745713550  0.8419991918 
+0.0324509405  57            0.0100000000  0.7191616766  2039.2094199  0.9519748316  0.8277826761 
+0.0573489182  60            0.0100000000  0.6742514970  2141.9946093  0.9627150781  0.8298444386 
+0.0353075974  63            0.0100000000  0.6682634731  2245.5371632  0.9808542571  0.8474250464 
+0.0521669090  66            0.0100000000  0.7077844311  2348.7179117  0.9874019309  0.8618109460 
+0.0448779911  69            0.0100000000  0.7281437126  2452.1992399  0.9941090496  0.8714595670 
+0.0092045506  72            0.0010000000  0.7131736527  2555.4956238  0.9990167211  0.8810143412 
+0.0145042157  75            0.0010000000  0.7197604790  2658.7761440  0.9988132209  0.8794436776 
+0.0075767208  78            0.0010000000  0.7137724551  2762.4872722  0.9987071651  0.8838806826 
+0.0040377122  81            0.0010000000  0.7095808383  2866.1635854  0.9994323329  0.8849451663 
+0.0045908219  84            0.0010000000  0.7191616766  2970.0087094  0.9993348885  0.8833393344 
+0.0230596513  87            0.0010000000  0.7161676647  3076.3656642  0.9995126662  0.8772912971 
+0.0029031199  90            0.0001000000  0.7251497006  3179.7231247  0.9996904440  0.8798677658 
+0.0116193509  93            0.0001000000  0.7233532934  3282.7414700  0.9993979991  0.8813915060 
+0.0118899522  96            0.0001000000  0.7155688623  3385.7894747  0.9991313883  0.8846787068 
+0.0075262468  99            0.0001000000  0.7167664671  3491.0121073  0.9997161664  0.8837634226 
+valid acc: 0.8849
+DG result: 0.7096
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 11, in get_fea
+    net = networks.get_network(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/networks.py", line 13, in get_network
+    return globals()[args.net](args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/vgg.py", line 76, in vgg
+    model = VGG(make_layers(cfg['E']), args.replace_norm, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/vgg.py", line 63, in make_layers
+    layers += [conv2d, myNorm.Norm(v), nn.ReLU(inplace=True)]
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/normalization.py", line 174, in Norm
+    return _config.norm_methods[_config.norm](*args, **kwargs)
+KeyError: 'BN#--norm_cfg'
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 20, in __init__
+    args.num_classes, self.featurizer.in_features, args.classifier)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1269, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'VGG' object has no attribute 'in_features'
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.01
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:vgg
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[2]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:BN
+norm_cfg:{}
+normConv:No
+normConv_cfg:{}
+replace_norm:{}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 28, in update
+    loss = F.cross_entropy(self.predict(all_x), all_y)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 38, in predict
+    return self.network(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/vgg.py", line 25, in forward
+    x = self.features(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:16
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.01
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:vgg
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[2]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:BN
+norm_cfg:{}
+normConv:No
+normConv_cfg:{}
+replace_norm:{}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 28, in update
+    loss = F.cross_entropy(self.predict(all_x), all_y)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 38, in predict
+    return self.network(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/common_network.py", line 37, in forward
+    x = self.fc(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (48x25088 and 512x7)
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:16
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.01
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:vgg
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[2]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:BN
+norm_cfg:{}
+normConv:No
+normConv_cfg:{}
+replace_norm:{}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+<built-in method size of Tensor object at 0x7f02bb55a130>
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 28, in update
+    loss = F.cross_entropy(self.predict(all_x), all_y)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 38, in predict
+    return self.network(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/common_network.py", line 37, in forward
+    x = self.fc(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (48x25088 and 512x7)
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:16
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.01
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:vgg
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[2]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:BN
+norm_cfg:{}
+normConv:No
+normConv_cfg:{}
+replace_norm:{}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 35, in update
+    return {'class': loss.item()}
+KeyboardInterrupt
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:16
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.01
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:vgg
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[2]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:BN
+norm_cfg:{}
+normConv:No
+normConv_cfg:{}
+replace_norm:{}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+2.0690715313  0             0.0100000000  0.1329341317  118.00050377  0.1942783198  0.1894582553 
+1.6415020227  3             0.0100000000  0.2449101796  372.88224673  0.2740208431  0.2835787152 
+1.5673936605  6             0.0100000000  0.3185628743  630.84487700  0.3543860180  0.3823351436 
+1.8537902832  9             0.0100000000  0.3437125749  889.17029809  0.4124862504  0.3968428861 
+1.4617470503  12            0.0100000000  0.3275449102  1148.1733069  0.4123942512  0.4443365709 
+1.3564475775  15            0.0100000000  0.3413173653  1406.1780421  0.3546165880  0.3286218145 
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 35, in update
+    return {'class': loss.item()}
+KeyboardInterrupt
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/RSC.py", line 12, in __init__
+    super(RSC, self).__init__(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 11, in get_fea
+    net = networks.get_network(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/networks.py", line 13, in get_network
+    return globals()[args.net](args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 203, in resnet18
+    model = ResNet(BasicBlock, [2, 2, 2, 2], args.replace_norm, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 148, in __init__
+    self._replace_norm()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 168, in _replace_norm
+    if self.replace_norm['pre_norm']:
+KeyError: 'pre_norm'
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/RSC.py", line 12, in __init__
+    super(RSC, self).__init__(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 11, in get_fea
+    net = networks.get_network(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/networks.py", line 13, in get_network
+    return globals()[args.net](args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 206, in resnet18
+    model = ResNet(BasicBlock, [2, 2, 2, 2], args, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 149, in __init__
+    self._replace_norm()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 169, in _replace_norm
+    if self.args['norm'] == 'BN':
+TypeError: 'Namespace' object is not subscriptable
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:RSC
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.01
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[2]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:BN
+norm_cfg:{}
+normConv:No
+normConv_cfg:{}
+replace_norm:{}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+1.7802110910  0             0.0100000000  0.2898203593  34.208148479  0.3052421203  0.3195124730 
+1.4339661598  3             0.0100000000  0.4035928144  109.17883014  0.4391070415  0.4728835365 
+1.3407059908  6             0.0100000000  0.3862275449  183.70502662  0.5131923825  0.5339771429 
+0.9204799533  9             0.0100000000  0.4526946108  263.48025822  0.6013047211  0.6079544075 
+1.0635637045  12            0.0100000000  0.5011976048  342.28013229  0.6935189799  0.6997706761 
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/RSC.py", line 58, in update
+    return {'class': loss.item()}
+KeyboardInterrupt
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.01
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[3]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:BN
+norm_cfg:{}
+normConv:No
+normConv_cfg:{}
+replace_norm:{}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+1.5274643898  0             0.0100000000  0.1318401629  34.838782548  0.3374270175  0.3934719463 
+1.0230401754  3             0.0100000000  0.2249936371  112.55041074  0.4948655139  0.5028728647 
+0.6228620410  6             0.0100000000  0.3451259863  189.49461102  0.6494490584  0.6329163505 
+0.5216761827  9             0.0100000000  0.2540086536  265.54432439  0.7347097814  0.6985403679 
+0.6486607194  12            0.0100000000  0.4370068720  341.96363949  0.7273714529  0.6972934987 
+0.3172101676  15            0.0100000000  0.4792568083  418.88742470  0.8362347749  0.7498160577 
+0.3384539783  18            0.0100000000  0.5100534487  494.89152216  0.8959732238  0.7852817948 
+0.2889332771  21            0.0100000000  0.4917281751  571.06745958  0.8998383736  0.7916399766 
+0.1380050927  24            0.0100000000  0.5187070501  647.87928318  0.8932482098  0.7692602626 
+0.1372052282  27            0.0100000000  0.4924917282  725.13025832  0.9175720520  0.7889475924 
+0.0879780054  30            0.0100000000  0.5568847035  804.96163582  0.9367893605  0.7960841643 
+0.0288708359  33            0.0100000000  0.3491982693  882.13809132  0.8158323714  0.7215430598 
+0.1128810123  36            0.0100000000  0.5128531433  961.43732142  0.9297164757  0.8045888980 
+0.1151745096  39            0.0100000000  0.4871468567  1039.1400268  0.9046943632  0.7623626947 
+0.0696913376  42            0.0100000000  0.5273606516  1117.6935122  0.9263430082  0.7738998471 
+0.0272346530  45            0.0100000000  0.5141257317  1195.1477658  0.9754650781  0.8239889559 
+0.0769026652  48            0.0100000000  0.6485110715  1272.3336508  0.9765307549  0.8186144223 
+0.0686550513  51            0.0100000000  0.5792822601  1349.7768363  0.9590204514  0.7979875913 
+0.0478092432  54            0.0100000000  0.6332400102  1429.1150283  0.9763422976  0.8214033424 
+0.0471066386  57            0.0100000000  0.4812929499  1506.9143650  0.9846351424  0.8186777519 
+0.0385530032  60            0.0100000000  0.5909900738  1585.9967417  0.9770844709  0.8148850876 
+0.0545805357  63            0.0100000000  0.5609569865  1662.9092791  0.9722605592  0.8112826196 
+0.0289716218  66            0.0100000000  0.5927716976  1741.2017464  0.9359000032  0.7635595105 
+0.0196458083  69            0.0100000000  0.5171799440  1818.8844501  0.9827069763  0.8274747920 
+0.0026703787  72            0.0010000000  0.6248409264  1896.7480547  0.9978441091  0.8395428811 
+0.0309389457  75            0.0010000000  0.5813184016  1974.7153649  0.9983314416  0.8443818173 
+0.0006841409  78            0.0010000000  0.6141511835  2052.0401875  0.9993949434  0.8486318538 
+0.0026191243  81            0.0010000000  0.6075337236  2129.2679312  0.9990853887  0.8534707900 
+0.0047883228  84            0.0010000000  0.6123695597  2206.5724642  0.9998222222  0.8525555058 
+0.0255684778  87            0.0010000000  0.6103334182  2284.2024557  0.9978698315  0.8457693693 
+0.0012416894  90            0.0001000000  0.5960804276  2360.8092584  0.9994409442  0.8510317656 
+0.0008519326  93            0.0001000000  0.5884448969  2437.6152184  0.9991399984  0.8515235897 
+0.0132130692  96            0.0001000000  0.5981165691  2515.2709155  0.9996187220  0.8506617739 
+0.0050905622  99            0.0001000000  0.5986256045  2592.0862858  0.9986323875  0.8485927412 
+valid acc: 0.8535
+DG result: 0.6075
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 11, in get_fea
+    net = networks.get_network(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/networks.py", line 13, in get_network
+    return globals()[args.net](args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 206, in resnet18
+    model = ResNet(BasicBlock, [2, 2, 2, 2], args, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 149, in __init__
+    self._replace_norm()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 171, in _replace_norm
+    if self.replace_norm['pre_norm']:
+KeyError: 'pre_norm'
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.01
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[3]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:No
+norm_cfg:{}
+normConv:No
+normConv_cfg:{}
+replace_norm:{'pre_norm': 1, 'layer': [1, 2, 3, 4], 'norm_num': [1, 2]}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+1.7642322779  0             0.0100000000  0.2313565793  30.811286926  0.3402630480  0.3690542364 
+1.4812248945  3             0.0100000000  0.3733774497  97.539055347  0.3896849827  0.3877473510 
+1.1446614265  6             0.0100000000  0.2929498600  164.11071944  0.5152602989  0.5408430837 
+0.9698979259  9             0.0100000000  0.4135912446  232.23141121  0.6527109878  0.6635420718 
+1.0006513596  12            0.0100000000  0.5253245101  300.73202562  0.5784363312  0.5500501415 
+0.6566683650  15            0.0100000000  0.3652328837  367.02656888  0.7269287930  0.7131398963 
+0.5609565377  18            0.0100000000  0.4594044286  433.64416885  0.7866023187  0.7482300675 
+0.5606246591  21            0.0100000000  0.4522779333  499.97975063  0.7874280933  0.7604930137 
+0.2780945003  24            0.0100000000  0.4805293968  566.64632749  0.7439737741  0.7059792734 
+0.2576493919  27            0.0100000000  0.4545685925  634.31536769  0.8594163970  0.8000521293 
+0.3165256381  30            0.0100000000  0.4308984474  702.72517919  0.8709841947  0.7779356363 
+0.2789169550  33            0.0100000000  0.5321964877  770.39899349  0.8563742210  0.7857840199 
+0.1632525176  36            0.0100000000  0.4706032069  836.51831769  0.8618155888  0.7615640423 
+0.2189834565  39            0.0100000000  0.4596589463  902.56853604  0.8593645997  0.7639449376 
+0.1716535836  42            0.0100000000  0.4998727412  968.91793036  0.9385853460  0.8342903459 
+0.0828154683  45            0.0100000000  0.5650292695  1035.5578389  0.9260535881  0.7959531766 
+0.1915688366  48            0.0100000000  0.5034359888  1103.0365874  0.9621072210  0.8219981484 
+0.1323267668  51            0.0100000000  0.4734029015  1170.2681534  0.9515686585  0.8158979872 
+0.0631304383  54            0.0100000000  0.6004072283  1237.1125912  0.9668564531  0.8385890240 
+0.0633711591  57            0.0100000000  0.5174344617  1303.0934543  0.9693904572  0.8422449604 
+0.0691261515  60            0.0100000000  0.5314329346  1368.9724569  0.9694456791  0.8248703280 
+0.0476179123  63            0.0100000000  0.5187070501  1434.8265280  0.9595591245  0.8276499266 
+0.0480233245  66            0.0100000000  0.5418681598  1500.9029114  0.9470613732  0.8106838588 
+0.0807270631  69            0.0100000000  0.5650292695  1566.8659169  0.9799248648  0.8450586372 
+0.0078785727  72            0.0010000000  0.5907355561  1632.8850069  0.9966028295  0.8587188305 
+0.0164647568  75            0.0010000000  0.5841180962  1698.8108980  0.9958659960  0.8615474029 
+0.0016677467  78            0.0010000000  0.5790277424  1764.7936367  0.9972796093  0.8604959305 
+0.0106540183  81            0.0010000000  0.5792822601  1830.8282124  0.9966745527  0.8570784584 
+0.0019946741  84            0.0010000000  0.6075337236  1896.6877615  0.9964282166  0.8586849184 
+0.0249577072  87            0.0010000000  0.5604479511  1962.5812118  0.9977412194  0.8638502391 
+0.0031215635  90            0.0001000000  0.5528124205  2028.5514044  0.9976663313  0.8586849184 
+0.0032001967  93            0.0001000000  0.5604479511  2094.5494332  0.9968983313  0.8618151185 
+0.0094802724  96            0.0001000000  0.5759735302  2160.4347686  0.9976663313  0.8603936544 
+0.0048293280  99            0.0001000000  0.5792822601  2226.3159713  0.9973107758  0.8609193906 
+valid acc: 0.8639
+DG result: 0.5604
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.01
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[3]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:ItN
+norm_cfg:{'num_channels': 16}
+normConv:No
+normConv_cfg:{}
+replace_norm:{'pre_norm': 1, 'layer': [1, 2, 3, 4], 'norm_num': [1, 2]}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+1.4793545008  0             0.0100000000  0.1982692797  59.033279657  0.3065184303  0.3220418594 
+1.0044263601  3             0.0100000000  0.3932298295  204.09090256  0.5774135948  0.6058584791 
+0.6507213116  6             0.0100000000  0.2840417409  349.21206140  0.6430664849  0.6614593892 
+0.4140164852  9             0.0100000000  0.2944769661  496.44286513  0.6782532766  0.6681839815 
+0.5085460544  12            0.0100000000  0.3901756172  643.25754117  0.6778593017  0.6680800861 
+0.1598877460  15            0.0100000000  0.4339526597  788.42817473  0.8387525628  0.7752534870 
+0.2815315425  18            0.0100000000  0.5187070501  931.85620522  0.8557413715  0.7915473956 
+0.1662571877  21            0.0100000000  0.3413082209  1075.3277454  0.8765645412  0.7859580750 
+0.1298673749  24            0.0100000000  0.5125986256  1218.8015346  0.8879834880  0.8046567222 
+0.1205201074  27            0.0100000000  0.5482311021  1362.2593898  0.8890110563  0.8017361086 
+0.0724253803  30            0.0100000000  0.4996182235  1506.1991884  0.8620505689  0.7729221052 
+0.0348341540  33            0.0100000000  0.4706032069  1650.4021332  0.8788133589  0.7539889486 
+0.0083325040  36            0.0100000000  0.5533214558  1793.8368020  0.9590857801  0.8329957486 
+0.0370785370  39            0.0100000000  0.3807584627  1937.4752953  0.9073909466  0.8034414296 
+0.0709618628  42            0.0100000000  0.5151438025  2081.0933136  0.9772973613  0.8495912850 
+0.0123739270  45            0.0100000000  0.5566301858  2224.2911090  0.9638902342  0.8260579886 
+0.0500652902  48            0.0100000000  0.3937388649  2367.7701635  0.9725316927  0.8568159432 
+0.0762410909  51            0.0100000000  0.5902265207  2511.4774703  0.9528358297  0.8255711989 
+0.0495158136  54            0.0100000000  0.5123441079  2654.9349012  0.9824902045  0.8459791219 
+0.0226324871  57            0.0100000000  0.4364978366  2798.7414519  0.8731536448  0.7662077478 
+0.0318425074  60            0.0100000000  0.6062611351  2942.2257554  0.9936812178  0.8597168345 
+0.0156117938  63            0.0100000000  0.5125986256  3085.7633502  0.9715476373  0.8380731490 
+0.0131233474  66            0.0100000000  0.5016543650  3229.2649805  0.9919869370  0.8649017115 
+0.0081132874  69            0.0100000000  0.4950369051  3372.7226467  0.9800770245  0.8446886455 
+0.0055384599  72            0.0010000000  0.6261135149  3516.0010476  0.9988304436  0.8849976058 
+0.0097890617  75            0.0010000000  0.5993891575  3659.4682035  0.9994409442  0.8835761417 
+0.0010510515  78            0.0010000000  0.6253499618  3803.0361011  0.9994409442  0.8814583013 
+0.0021734037  81            0.0010000000  0.6228047849  3946.3880567  0.9990853887  0.8803045529 
+0.0061526895  84            0.0010000000  0.6342580809  4089.9336955  1.0000000000  0.8771059888 
+0.0112624653  87            0.0010000000  0.6021888521  4233.3823637  0.9994152218  0.8865505974 
+0.0032273105  90            0.0001000000  0.5998981929  4376.8735771  0.9998222222  0.8799442563 
+0.0013375995  93            0.0001000000  0.6065156528  4520.1842014  0.9992374440  0.8814875527 
+0.0058099981  96            0.0001000000  0.6019343344  4663.6439895  0.9994409442  0.8800660886 
+0.0014168224  99            0.0001000000  0.6161873250  4806.8552770  0.9992374440  0.8829090169 
+valid acc: 0.8866
+DG result: 0.6022
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.01
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:500
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[0]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:ItN
+norm_cfg:{'num_channels': 16}
+normConv:No
+normConv_cfg:{}
+replace_norm:{'pre_norm': 1, 'layer': [1, 2, 3, 4], 'norm_num': [1, 2]}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+1.5544871092  0             0.0100000000  0.1948242188  58.743447303  0.2622715309  0.2669855740 
+0.7453864217  3             0.0100000000  0.2290039062  207.68943762  0.5753580899  0.5753416479 
+0.6427406073  6             0.0100000000  0.3247070312  354.45775318  0.6535665044  0.6716164561 
+0.3326119483  9             0.0100000000  0.3056640625  500.83969688  0.6811491503  0.7072447118 
+0.3112240136  12            0.0100000000  0.3911132812  644.17203450  0.8338965706  0.8112106814 
+0.1601598263  15            0.0100000000  0.2792968750  786.50418519  0.8262109593  0.7869981430 
+0.0758486837  18            0.0100000000  0.3603515625  928.73881626  0.8420202666  0.7815443999 
+0.1438696980  21            0.0100000000  0.4096679688  1072.0706369  0.9303621988  0.8565170153 
+0.2117881775  24            0.0100000000  0.3891601562  1214.9109315  0.9136684306  0.8548403770 
+0.1147316471  27            0.0100000000  0.4570312500  1359.9356124  0.9540097541  0.8793806561 
+0.0384819172  30            0.0100000000  0.4355468750  1504.1621427  0.9238859800  0.8461810841 
+0.0994359255  33            0.0100000000  0.4794921875  1649.5735504  0.9575119252  0.8553586848 
+0.1225133538  36            0.0100000000  0.4262695312  1792.6508407  0.9560826671  0.8643734466 
+0.0371402614  39            0.0100000000  0.4482421875  1935.2144382  0.9762983433  0.8722670546 
+0.0322326608  42            0.0100000000  0.5063476562  2077.7671270  0.9779075175  0.8812243241 
+0.0265695881  45            0.0100000000  0.5073242188  2220.5437872  0.9779608984  0.8796425335 
+0.0398765020  48            0.0100000000  0.4916992188  2363.3016009  0.9751630041  0.8870767880 
+0.1242197677  51            0.0100000000  0.4726562500  2508.5753626  0.9774527307  0.8877186950 
+0.0305810049  54            0.0100000000  0.5000000000  2652.5024623  0.9901565894  0.8962543887 
+0.0816654265  57            0.0100000000  0.5219726562  2796.6683542  0.9907647090  0.8974003360 
+0.0080131385  60            0.0100000000  0.5195312500  2941.8593518  0.9896324254  0.8938473038 
+0.0523095429  63            0.0100000000  0.4526367188  3085.2828788  0.9835910170  0.8803142317 
+0.0283799171  66            0.0100000000  0.5166015625  3228.4707345  0.9935717652  0.8908396524 
+0.0327015370  69            0.0100000000  0.5205078125  3373.2860836  0.9860020800  0.8942720201 
+0.0347370394  72            0.0100000000  0.4819335938  3518.1086242  0.9953464910  0.8945332694 
+0.0085193822  75            0.0100000000  0.4892578125  3661.5253095  0.9920717048  0.9036619925 
+0.0410992354  78            0.0100000000  0.5224609375  3805.2668857  0.9871962005  0.8833311258 
+0.0043064249  81            0.0100000000  0.5151367188  3950.7059323  0.9920091522  0.8986868681 
+0.0183284301  84            0.0100000000  0.4970703125  4097.0951507  0.9925455448  0.8956668335 
+0.0207411703  87            0.0100000000  0.4389648438  4240.0175931  0.9936091534  0.8934337145 
+0.0121425213  90            0.0100000000  0.4941406250  4382.9749596  0.9897514145  0.8965143818 
+0.0047648125  93            0.0100000000  0.5117187500  4527.7893474  0.9893768095  0.8978380636 
+0.0134635717  96            0.0100000000  0.5498046875  4674.5900905  0.9975889407  0.9002197540 
+0.0064407489  99            0.0100000000  0.4750976562  4818.9386577  0.9914788720  0.8961175724 
+0.0180909541  102           0.0100000000  0.4985351562  4963.4433414  0.9743420512  0.8771190021 
+0.0211037174  105           0.0100000000  0.5102539062  5107.3593928  0.9958081024  0.8965280212 
+0.0057306332  108           0.0100000000  0.4570312500  5255.1348872  0.9820497983  0.8832184478 
+0.0051137204  111           0.0100000000  0.5058593750  5401.2030336  0.9967313275  0.8985103898 
+0.0138361910  114           0.0100000000  0.5034179688  5545.7333478  0.9968091595  0.9011187194 
+0.0153795267  117           0.0100000000  0.4892578125  5694.6942853  0.9970868855  0.8925261344 
+0.0710454509  120           0.0100000000  0.5131835938  5838.9457290  0.9856114823  0.8855277504 
+0.0167342238  123           0.0100000000  0.5288085938  5985.0047287  0.9973051059  0.9040483030 
+0.0107305786  126           0.0100000000  0.5234375000  6130.2035627  0.9977667172  0.9160113396 
+0.0066806022  129           0.0100000000  0.4970703125  6272.3714275  0.9898727571  0.8976764809 
+0.0195151307  132           0.0100000000  0.4926757812  6415.8882076  0.9893081517  0.8878989418 
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 31, in update
+    loss.backward()
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.1
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[0]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:ItN
+norm_cfg:{'num_channels': 16}
+normConv:No
+normConv_cfg:{}
+replace_norm:{'pre_norm': 1, 'layer': [1, 2, 3, 4], 'norm_num': [1, 2]}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+1.8385939598  0             0.1000000000  0.2294921875  58.297299861  0.3142217887  0.3422336249 
+0.6770832539  3             0.1000000000  0.2714843750  201.87917113  0.4507950313  0.4822387918 
+0.4585520923  6             0.1000000000  0.3813476562  345.54036045  0.7537172632  0.7302174678 
+0.2629923522  9             0.1000000000  0.3740234375  489.63634777  0.7324576872  0.7500312829 
+0.2410720587  12            0.1000000000  0.4248046875  638.10634160  0.8548264454  0.7971391646 
+0.2247260958  15            0.1000000000  0.4077148438  781.57087802  0.8800281724  0.8342081767 
+0.1227115393  18            0.1000000000  0.4072265625  927.09452509  0.8603063164  0.8089684983 
+0.1730695367  21            0.1000000000  0.4497070312  1070.4088644  0.8333954596  0.7940244881 
+0.1461996138  24            0.1000000000  0.3789062500  1213.3016107  0.8706774301  0.8240436720 
+0.2032877654  27            0.1000000000  0.3251953125  1356.4020252  0.8023919862  0.7571755202 
+0.0869210735  30            0.1000000000  0.4946289062  1499.6655178  0.9084253779  0.8350935027 
+0.1063863039  33            0.1000000000  0.4819335938  1642.7177085  0.9024197715  0.8286702635 
+0.1678636670  36            0.1000000000  0.5278320312  1785.9371716  0.9573355984  0.8749286585 
+0.1256676614  39            0.1000000000  0.3837890625  1929.2006645  0.8704601097  0.8248175762 
+0.1588059366  42            0.1000000000  0.4907226562  2072.3920376  0.9412416890  0.8584387240 
+0.0503867827  45            0.1000000000  0.4580078125  2215.5160593  0.9088235293  0.8252731341 
+0.0749926269  48            0.1000000000  0.4892578125  2358.7980520  0.9353849197  0.8751416583 
+0.1238523722  51            0.1000000000  0.4702148438  2501.9697186  0.8857848141  0.8216458298 
+0.1241008937  54            0.1000000000  0.3735351562  2645.0870158  0.8972700667  0.8455618264 
+0.1821850985  57            0.1000000000  0.4003906250  2788.2254674  0.8978377351  0.8379345196 
+0.1086555794  60            0.1000000000  0.4770507812  2931.2230832  0.9112185837  0.8287909280 
+0.0891606286  63            0.1000000000  0.4174804688  3074.2732646  0.8541677869  0.7915386803 
+0.1492331028  66            0.1000000000  0.4648437500  3217.2508304  0.9066650192  0.8419234222 
+0.0803606659  69            0.1000000000  0.4345703125  3361.9003024  0.9070685919  0.8504962384 
+0.0378749706  72            0.0100000000  0.5903320312  3505.5733337  0.9972707733  0.9337840376 
+0.0091636302  75            0.0100000000  0.5854492188  3648.6168808  0.9985121646  0.9325000178 
+0.0098674009  78            0.0100000000  0.6020507812  3791.8833136  0.9987616644  0.9290812896 
+0.0073837885  81            0.0100000000  0.6044921875  3937.2437074  0.9993262771  0.9315007577 
+0.0039565978  84            0.0100000000  0.5952148438  4080.4521446  0.9996818326  0.9349064746 
+0.0276533570  87            0.0100000000  0.5961914062  4223.4844832  0.9989707203  0.9352055017 
+0.0214283634  90            0.0010000000  0.6059570312  4366.5280654  0.9996444444  0.9366269658 
+0.0111442739  93            0.0010000000  0.6074218750  4509.5873270  0.9997161664  0.9343449421 
+0.0136168413  96            0.0010000000  0.6093750000  4652.6289520  0.9998222222  0.9329228499 
+0.0040165926  99            0.0010000000  0.6064453125  4795.5074193  0.9995383887  0.9354797623 
+valid acc: 0.9366
+DG result: 0.6060
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.1
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[0]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:ItN
+norm_cfg:{'num_channels': 16}
+normConv:No
+normConv_cfg:{}
+replace_norm:{'pre_norm': 1, 'layer': [1, 2, 3, 4], 'norm_num': [1, 2]}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+1.8385939598  0             0.1000000000  0.2294921875  57.170592308  0.3142217887  0.3422336249 
+0.6770832539  3             0.1000000000  0.2714843750  199.75494742  0.4507950313  0.4822387918 
+0.4585520923  6             0.1000000000  0.3813476562  342.33090734  0.7537172632  0.7302174678 
+0.2629923522  9             0.1000000000  0.3740234375  485.10034656  0.7324576872  0.7500312829 
+0.2410720587  12            0.1000000000  0.4248046875  627.75551342  0.8548264454  0.7971391646 
+0.2247260958  15            0.1000000000  0.4077148438  770.73916196  0.8800281724  0.8342081767 
+0.1227115393  18            0.1000000000  0.4072265625  913.44063973  0.8603063164  0.8089684983 
+0.1730695367  21            0.1000000000  0.4497070312  1056.5762939  0.8333954596  0.7940244881 
+0.1461996138  24            0.1000000000  0.3789062500  1199.8502519  0.8706774301  0.8240436720 
+0.2032877654  27            0.1000000000  0.3251953125  1342.7471871  0.8023919862  0.7571755202 
+0.0869210735  30            0.0100000000  0.4946289062  1485.8077147  0.9084253779  0.8350935027 
+0.0301834643  33            0.0100000000  0.5498046875  1628.6876120  0.9945072153  0.9064969341 
+0.0178530868  36            0.0100000000  0.5532226562  1771.8730378  0.9962758274  0.9125963799 
+0.0446119308  39            0.0100000000  0.5581054688  1914.8356716  0.9976232757  0.9161643076 
+0.0099372910  42            0.0100000000  0.5590820312  2057.7737491  0.9985464972  0.9214143207 
+0.0111735640  45            0.0100000000  0.5639648438  2201.1665415  0.9990767761  0.9226989686 
+0.0088115446  48            0.0100000000  0.5576171875  2344.6982483  0.9997161664  0.9148660204 
+0.0053172335  51            0.0100000000  0.5737304688  2488.1956915  0.9989737759  0.9218501640 
+0.0093055535  54            0.0100000000  0.5629882812  2631.3746325  0.9993606097  0.9187069526 
+0.0062499829  57            0.0100000000  0.5463867188  2776.4308931  0.9992202213  0.9225485129 
+0.0050142528  60            0.0100000000  0.5712890625  2923.4607639  0.9998222222  0.9252558810 
+0.0213628355  63            0.0100000000  0.5649414062  3067.0672717  0.9997161664  0.9204150605 
+0.0041428315  66            0.0100000000  0.5747070312  3210.7631890  0.9998222222  0.9202782443 
+0.0029647390  69            0.0100000000  0.5776367188  3355.7386159  0.9996818326  0.9251060535 
+0.0076002120  72            0.0010000000  0.5893554688  3498.7696595  0.9997161664  0.9310791818 
+0.0027019298  75            0.0010000000  0.5756835938  3641.6129403  0.9994323316  0.9249686091 
+0.0075914101  78            0.0010000000  0.5722656250  3784.2705404  0.9995383887  0.9271008053 
+0.0016669595  81            0.0010000000  0.5688476562  3927.0583612  0.9997161664  0.9286603418 
+0.0054495693  84            0.0010000000  0.5673828125  4069.9825422  1.0000000000  0.9280857979 
+0.0073385262  87            0.0010000000  0.5649414062  4212.6011171  0.9993262771  0.9283718137 
+0.0123266904  90            0.0001000000  0.5712890625  4355.3466675  0.9998222222  0.9289469857 
+0.0041095470  93            0.0001000000  0.5722656250  4498.1847662  0.9996101107  0.9282362536 
+0.0149541209  96            0.0001000000  0.5742187500  4640.8375582  0.9998222222  0.9278115373 
+0.0091135986  99            0.0001000000  0.5727539062  4783.5001647  0.9997878884  0.9286603418 
+valid acc: 0.9311
+DG result: 0.5894
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.1
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[0]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:BN
+norm_cfg:{'num_channels': 16}
+normConv:No
+normConv_cfg:{}
+replace_norm:{'pre_norm': 0, 'layer': [1, 2, 3, 4], 'norm_num': [2]}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+1.8110762835  0             0.1000000000  0.1752929688  32.104724407  0.2695908642  0.3014000699 
+1.2656768560  3             0.1000000000  0.2680664062  104.04032897  0.4861303392  0.5213858377 
+0.8967851996  6             0.1000000000  0.2822265625  175.97802424  0.6055178724  0.6080126189 
+0.5864871144  9             0.1000000000  0.3115234375  248.04492163  0.7234273682  0.7233701946 
+0.5442708135  12            0.1000000000  0.3339843750  320.10083174  0.7588462021  0.7366766004 
+0.3098362982  15            0.1000000000  0.2490234375  392.29536962  0.8225326261  0.7954186464 
+0.2615117729  18            0.1000000000  0.3476562500  464.56286740  0.8300863654  0.7939124112 
+0.2792558372  21            0.1000000000  0.3881835938  536.83218145  0.8509724827  0.7874259998 
+0.2542757094  24            0.1000000000  0.3706054688  609.13536596  0.8743759314  0.8124955079 
+0.2543375790  27            0.1000000000  0.3808593750  681.48688125  0.8628170782  0.7934696318 
+0.1139562652  30            0.0100000000  0.3754882812  753.87977480  0.8386761487  0.7620333534 
+0.0507561676  33            0.0100000000  0.4399414062  826.37340998  0.9856053612  0.8853309023 
+0.0376786664  36            0.0100000000  0.4355468750  898.81361579  0.9904679310  0.8922772683 
+0.1005957723  39            0.0100000000  0.4584960938  971.30629038  0.9927729333  0.8885731524 
+0.0112965619  42            0.0100000000  0.4653320312  1043.7370393  0.9952900484  0.8870136158 
+0.0206968281  45            0.0100000000  0.4643554688  1116.2635939  0.9956768809  0.8990614235 
+0.0127650062  48            0.0100000000  0.4560546875  1188.6962099  0.9976949965  0.8976777371 
+0.0082620932  51            0.0100000000  0.4755859375  1261.1367385  0.9972364395  0.8921268126 
+0.0271241572  54            0.0100000000  0.4667968750  1333.5594201  0.9976263301  0.8971044494 
+0.0176731590  57            0.0100000000  0.4628906250  1406.0036025  0.9979444975  0.8980900702 
+0.0073408503  60            0.0100000000  0.4721679688  1478.4530603  0.9977011065  0.8953820740 
+0.0557276420  63            0.0100000000  0.4863281250  1550.8927719  0.9981909416  0.8976647258 
+0.0077347253  66            0.0100000000  0.4926757812  1623.3462934  0.9990424423  0.8996359674 
+0.0085888300  69            0.0100000000  0.4970703125  1695.7560589  0.9986525529  0.8911176816 
+0.0097725736  72            0.0010000000  0.4897460938  1768.2487912  0.9982252742  0.8959566178 
+0.0040791612  75            0.0010000000  0.4829101562  1841.0289454  0.9995040549  0.8932498778 
+0.0123972641  78            0.0010000000  0.4877929688  1913.5220716  0.9993262771  0.8955201464 
+0.0034412900  81            0.0010000000  0.4873046875  1986.2156918  0.9997161664  0.8990744348 
+0.0030746097  84            0.0010000000  0.4863281250  2058.5097537  0.9997878884  0.8963819622 
+0.0397993401  87            0.0010000000  0.4868164062  2130.7126216  0.9994697211  0.8986522308 
+0.0047858660  90            0.0001000000  0.4853515625  2202.9837672  0.9982222185  0.9000736950 
+0.0074714064  93            0.0001000000  0.4868164062  2275.3054175  0.9995040549  0.8980770589 
+0.0148500269  96            0.0001000000  0.4902343750  2347.6418371  0.9994323329  0.8994985230 
+0.0121678337  99            0.0001000000  0.4819335938  2419.9387407  0.9994666667  0.8972295106 
+valid acc: 0.9001
+DG result: 0.4854
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.1
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[0]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:BN
+norm_cfg:{'num_channels': 16}
+normConv:No
+normConv_cfg:{}
+replace_norm:{'pre_norm': 1, 'layer': [], 'norm_num': []}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 35, in update
+    return {'class': loss.item()}
+KeyboardInterrupt
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.1
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[0]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:ItN
+norm_cfg:{'num_channels': 16}
+normConv:No
+normConv_cfg:{}
+replace_norm:{'pre_norm': 1, 'layer': [], 'norm_num': []}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+1.8121548891  0             0.1000000000  0.1650390625  36.368645906  0.3014181526  0.3436150047 
+1.2059569359  3             0.1000000000  0.2841796875  119.52758455  0.5478801452  0.5634585092 
+0.6693255901  6             0.1000000000  0.2709960938  202.66881847  0.6332030951  0.6426621629 
+0.5736179948  9             0.1000000000  0.3115234375  285.87968587  0.6903780825  0.7010216669 
+0.4831161201  12            0.1000000000  0.3564453125  369.14240527  0.7512287160  0.6905401803 
+0.2942552269  15            0.1000000000  0.3188476562  452.38325858  0.8260576573  0.8036397893 
+0.2535865009  18            0.1000000000  0.3579101562  535.86043810  0.8387661861  0.7762857722 
+0.2436919212  21            0.1000000000  0.4355468750  619.13050460  0.8088843826  0.7637414884 
+0.2189500332  24            0.1000000000  0.4062500000  702.46568512  0.8637176828  0.7942355765 
+0.1490788013  27            0.1000000000  0.3759765625  785.81226944  0.8500071453  0.8041585194 
+0.1168205217  30            0.0100000000  0.3544921875  869.04717826  0.8691745156  0.7911691496 
+0.0447850525  33            0.0100000000  0.4760742188  952.40494775  0.9840770844  0.8962680281 
+0.0207207184  36            0.0100000000  0.4755859375  1035.7869720  0.9920244303  0.8962543887 
+0.0321546607  39            0.0100000000  0.4907226562  1119.2059130  0.9952122152  0.8904168204 
+0.0262635201  42            0.0100000000  0.5048828125  1202.5453310  0.9952496034  0.8931235604 
+0.0344315395  45            0.0100000000  0.5019531250  1285.9115562  0.9958889925  0.8915652801 
+0.0147789521  48            0.0100000000  0.5043945312  1369.3419327  0.9973768303  0.8958445680 
+0.0256473143  51            0.0100000000  0.5083007812  1452.8414623  0.9973768279  0.8935470206 
+0.0320482440  54            0.0100000000  0.4941406250  1535.7976908  0.9965566054  0.9002210102 
+0.0156728197  57            0.0100000000  0.4873046875  1618.9496071  0.9971273293  0.8905536367 
+0.0077888607  60            0.0100000000  0.4980468750  1701.9545140  0.9983343868  0.8993852169 
+0.0097808698  63            0.0100000000  0.5117187500  1785.0802080  0.9984373857  0.8962426336 
+0.0055294796  66            0.0100000000  0.5131835938  1868.1495282  0.9992576095  0.8975260252 
+0.0149154281  69            0.0100000000  0.5205078125  1951.2529752  0.9985434403  0.8931105491 
+0.0065888860  72            0.0010000000  0.5185546875  2034.3919794  0.9997878884  0.8980745465 
+0.0033265667  75            0.0010000000  0.5146484375  2117.4497897  0.9992545551  0.8946824689 
+0.0167739671  78            0.0010000000  0.5151367188  2200.6144306  0.9988646645  0.8979377302 
+0.0027475043  81            0.0010000000  0.5097656250  2283.6790442  0.9993262771  0.8989357342 
+0.0025944782  84            0.0010000000  0.5112304688  2366.8276996  0.9992202213  0.8959410942 
+0.0440106951  87            0.0010000000  0.5200195312  2449.8839511  0.9997878884  0.8962283661 
+0.0096545694  90            0.0001000000  0.5190429688  2532.9131553  0.9995040549  0.8929600935 
+0.0046425057  93            0.0001000000  0.5141601562  2616.0262730  0.9993979991  0.8960915498 
+0.0114362985  96            0.0001000000  0.5122070312  2699.1360700  0.9992919433  0.8926734496 
+0.0033775021  99            0.0001000000  0.5161132812  2782.1290755  0.9996101107  0.8929600935 
+valid acc: 0.9002
+DG result: 0.4941
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.1
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[1]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:BN
+norm_cfg:{'num_channels': 16}
+normConv:No
+normConv_cfg:{}
+replace_norm:{'pre_norm': 1, 'layer': [], 'norm_num': []}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+1.9514914751  0             0.1000000000  0.1399317406  32.256056785  0.2480071117  0.2556208504 
+1.2334973812  3             0.1000000000  0.2201365188  104.47155523  0.4344726040  0.4295521785 
+1.3833189011  6             0.1000000000  0.2273890785  176.64770388  0.4507846850  0.4592585201 
+0.7838215828  9             0.1000000000  0.4296075085  248.92623519  0.6294028858  0.6295776968 
+0.8632092476  12            0.1000000000  0.4517918089  321.16992902  0.6868795687  0.6635024248 
+0.5863233805  15            0.1000000000  0.4381399317  393.49878787  0.7182649319  0.7116048422 
+0.6899358630  18            0.1000000000  0.4880546075  465.84478855  0.7414580265  0.6974796513 
+0.4757339060  21            0.1000000000  0.5243174061  538.18028688  0.8178155303  0.7575093963 
+0.3655591011  24            0.1000000000  0.4577645051  610.57094883  0.7894960953  0.7377532405 
+0.2960613072  27            0.1000000000  0.4837883959  682.82686829  0.8118467869  0.7263234965 
+0.3988088369  30            0.0100000000  0.5170648464  755.27998328  0.8462871398  0.7535244660 
+0.1049759313  33            0.0100000000  0.5934300341  827.62840104  0.9736025622  0.8354150756 
+0.0747834668  36            0.0100000000  0.5810580205  899.97196745  0.9816664115  0.8318092915 
+0.0630168766  39            0.0100000000  0.5891638225  972.31544542  0.9863471407  0.8452804563 
+0.1240148544  42            0.0100000000  0.5857508532  1044.6197829  0.9899215359  0.8399204446 
+0.0409238599  45            0.0100000000  0.5866040956  1117.0430920  0.9914235397  0.8368885762 
+0.0209263694  48            0.0100000000  0.5810580205  1189.4532561  0.9936738218  0.8442408177 
+0.0194452740  51            0.0100000000  0.5891638225  1261.8350322  0.9953276575  0.8366619458 
+0.0153780915  54            0.0100000000  0.5797781570  1334.3268795  0.9973855497  0.8401406087 
+0.0253153592  57            0.0100000000  0.5750853242  1406.6790082  0.9967553275  0.8398663481 
+0.0168264378  60            0.0100000000  0.5836177474  1479.1266663  0.9955196024  0.8376599498 
+0.0240420476  63            0.0100000000  0.5819112628  1551.4848370  0.9967664377  0.8437020702 
+0.0116461935  66            0.0100000000  0.5819112628  1623.8643081  0.9977098296  0.8447541707 
+0.0060878755  69            0.0100000000  0.5806313993  1696.1789247  0.9972568284  0.8446108094 
+0.0057650730  72            0.0010000000  0.5921501706  1768.5386390  0.9982113304  0.8455130823 
+0.0034999186  75            0.0010000000  0.6002559727  1840.9208855  0.9989566649  0.8498334554 
+0.0274800714  78            0.0010000000  0.5947098976  1913.3543736  0.9982487199  0.8469541027 
+0.0041948059  81            0.0010000000  0.5900170648  1985.7314953  0.9985496645  0.8465462546 
+0.0213103723  84            0.0010000000  0.5934300341  2058.1096320  0.9991227757  0.8490204473 
+0.0053991582  87            0.0010000000  0.5925767918  2130.4775815  0.9985582758  0.8530313914 
+0.0223040450  90            0.0001000000  0.5921501706  2202.8835146  0.9988592205  0.8475794269 
+0.0121835703  93            0.0001000000  0.5921501706  2275.3182764  0.9984522201  0.8463964270 
+0.0098223239  96            0.0001000000  0.5947098976  2347.6086924  0.9990713320  0.8482074392 
+0.0120843844  99            0.0001000000  0.5900170648  2419.9649629  0.9989106641  0.8471742669 
+valid acc: 0.8530
+DG result: 0.5926
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.1
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[1]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:ItN
+norm_cfg:{'num_channels': 16}
+normConv:No
+normConv_cfg:{}
+replace_norm:{'pre_norm': 1, 'layer': [1, 2, 3, 4], 'norm_num': [1, 2]}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+=======hyper-parameter used========
+==========================================
+algorithm:ERM
+batch_size:32
+beta1:0.5
+bottleneck:256
+checkpoint_freq:3
+classifier:linear
+data_file:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG
+dataset:PACS
+data_dir:/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/data/PACS/
+gpu_id:0
+layer:bn
+lr:0.1
+lr_decay:0.75
+lr_decay1:1.0
+lr_decay2:1.0
+lr_gamma:0.0003
+max_epoch:100
+momentum:0.9
+net:resnet18
+N_WORKERS:4
+rsc_f_drop_factor:0.3333333333333333
+rsc_b_drop_factor:0.3333333333333333
+save_model_every_checkpoint:False
+schuse:False
+schusech:cos
+seed:0
+split_style:strat
+task:img_dg
+tau:1
+test_envs:[1]
+output:../data/train_output/test
+weight_decay:0.0005
+norm:ItN
+norm_cfg:{'num_channels': 16}
+normConv:No
+normConv_cfg:{}
+replace_norm:{'pre_norm': 1, 'layer': [1, 2, 3, 4], 'norm_num': [1, 2]}
+steps_per_epoch:100
+domains:['art_painting', 'cartoon', 'photo', 'sketch']
+img_dataset:{'office': ['amazon', 'dslr', 'webcam'], 'office-caltech': ['amazon', 'dslr', 'webcam', 'caltech'], 'office-home': ['Art', 'Clipart', 'Product', 'Real_World'], 'PACS': ['art_painting', 'cartoon', 'photo', 'sketch'], 'dg5': ['mnist', 'mnist_m', 'svhn', 'syn', 'usps'], 'VLCS': ['Caltech101', 'LabelMe', 'SUN09', 'VOC2007']}
+input_shape:(3, 224, 224)
+num_classes:7
+domain_num:4
+
+===========start training===========
+class         epoch         lr            target_acc    time          train_acc     valid_acc    
+1.7904744148  0             0.1000000000  0.1992320819  58.476348161  0.3464501269  0.3454887779 
+0.8758471608  3             0.1000000000  0.2828498294  200.94326615  0.5640890541  0.5715617979 
+0.6399505138  6             0.1000000000  0.3801194539  343.35001945  0.6524960249  0.6204688990 
+0.4926524460  9             0.1000000000  0.4671501706  485.81138253  0.7338975480  0.7268409869 
+0.3259249032  12            0.1000000000  0.4901877133  628.35965037  0.7728797051  0.7358061634 
+0.1625786871  15            0.1000000000  0.5443686007  771.15283465  0.8413333945  0.7936679858 
+0.1906905621  18            0.1000000000  0.5341296928  913.96713066  0.8552341339  0.7858423165 
+0.2718407512  21            0.1000000000  0.4692832765  1057.7167963  0.7843143184  0.7095217868 
+0.1813251227  24            0.1000000000  0.5119453925  1200.2562067  0.8802961360  0.8105443182 
+0.0954824314  27            0.1000000000  0.5776450512  1342.8635418  0.8660524855  0.7995227815 
+0.1753942519  30            0.0100000000  0.5669795222  1485.5763797  0.8699720499  0.8385538982 
+0.0310762879  33            0.0100000000  0.6471843003  1628.2244927  0.9939629865  0.9059899812 
+0.0360732600  36            0.0100000000  0.6663822526  1770.9616785  0.9974143278  0.9113245984 
+0.0212086383  39            0.0100000000  0.6595563140  1913.6470293  0.9978158853  0.9094243215 
+0.0374837629  42            0.0100000000  0.6736348123  2056.4970734  0.9985324417  0.9077631369 
+0.0358007327  45            0.0100000000  0.6838737201  2199.1628196  0.9985036637  0.9147264585 
+Environment:
+	Python: 3.8.16
+	PyTorch: 1.13.1+cu117
+	Torchvision: 0.14.1+cu117
+	CUDA: 11.7
+	CUDNN: 8500
+	NumPy: 1.23.5
+	PIL: 9.3.0
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 749, in cuda
+    return self._apply(lambda t: t.cuda(device))
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 664, in _apply
+    param_applied = fn(param)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 749, in <lambda>
+    return self._apply(lambda t: t.cuda(device))
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 MiB (GPU 0; 11.76 GiB total capacity; 1.54 MiB already allocated; 52.62 MiB free; 2.00 MiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+0.0132957324  48            0.0100000000  0.6774744027  2400.2544124  0.9986557203  0.9141877110 
+0.0088016661  51            0.0100000000  0.6668088737  2545.0959212  0.9993722767  0.9126952822 
+0.0092919059  54            0.0100000000  0.6595563140  2688.6971116  0.9988132197  0.9098673379 
+0.0025830900  57            0.0100000000  0.6587030717  2831.9859747  0.9994697211  0.9130301056 
+0.0080904951  60            0.0100000000  0.6723549488  2975.4082422  0.9995843882  0.9135434586 
+0.0032725474  63            0.0100000000  0.6796075085  3119.0239810  0.9998939442  0.9113083583 
+0.0060684639  66            0.0100000000  0.6689419795  3262.5854918  0.9994783324  0.9115636907 
+0.0035347212  69            0.0100000000  0.6561433447  3406.1728773  0.9993808880  0.9141173744 
+0.0025316065  72            0.0010000000  0.6672354949  3551.7873435  0.9997964998  0.9128613499 
+0.0053000548  75            0.0010000000  0.6753412969  3694.9709577  0.9998939442  0.9153544707 
+0.0084334416  78            0.0010000000  0.6663822526  3837.7901825  0.9995929996  0.9143727068 
+0.0028467616  81            0.0010000000  0.6672354949  3980.6949076  0.9994783324  0.9137284545 
+0.0026435629  84            0.0010000000  0.6642491468  4124.5300962  1.0000000000  0.9113435266 
+0.0028207283  87            0.0010000000  0.6697952218  4269.9379417  0.9996904440  0.9131545387 
+0.0044285739  90            0.0001000000  0.6625426621  4414.3758602  0.9997964998  0.9113435266 
+0.0029087150  93            0.0001000000  0.6655290102  4557.7303771  1.0000000000  0.9152046432 
+0.0019642459  96            0.0001000000  0.6693686007  4701.0485613  0.9998939442  0.9152046432 
+0.0036103867  99            0.0001000000  0.6676621160  4844.4547650  0.9998939442  0.9143916350 
+valid acc: 0.9154
+DG result: 0.6753

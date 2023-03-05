@@ -1,0 +1,501 @@
+Traceback (most recent call last):
+  File "../train.py", line 107, in <module>
+    train_loaders, eval_loaders = get_img_dataloader(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/datautil/getdataloader.py", line 22, in get_img_dataloader
+    tmpdatay = ImageDataset(args.dataset, args.task, args.data_dir,
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/datautil/imgdata/imgdataload.py", line 12, in __init__
+    self.imgs = ImageFolder(root_dir+domain_name).imgs
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/datasets/folder.py", line 309, in __init__
+    super().__init__(
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/datasets/folder.py", line 144, in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/datasets/folder.py", line 218, in find_classes
+    return find_classes(directory)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/datasets/folder.py", line 40, in find_classes
+    classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+FileNotFoundError: [Errno 2] No such file or directory: '/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG../data/PACS/art_painting'
+/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /home/jiajunlong/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+Traceback (most recent call last):
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/urllib/request.py", line 1354, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/http/client.py", line 1256, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/http/client.py", line 1302, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/http/client.py", line 1425, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:1131)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../train.py", line 110, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/MLDG.py", line 14, in __init__
+    super(MLDG, self).__init__(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 10, in get_fea
+    net = img_network.ResBase(args.net)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/img_network.py", line 34, in __init__
+    model_resnet = res_dict[res_name](pretrained=True)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_utils.py", line 142, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_utils.py", line 228, in inner_wrapper
+    return builder(*args, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/resnet.py", line 671, in resnet18
+    return _resnet(BasicBlock, [2, 2, 2, 2], weights, progress, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/resnet.py", line 301, in _resnet
+    model.load_state_dict(weights.get_state_dict(progress=progress))
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_api.py", line 66, in get_state_dict
+    return load_state_dict_from_url(self.url, progress=progress)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/hub.py", line 731, in load_state_dict_from_url
+    download_url_to_file(url, cached_file, hash_prefix, progress=progress)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/hub.py", line 597, in download_url_to_file
+    u = urlopen(req)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/urllib/request.py", line 542, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/urllib/request.py", line 502, in _call_chain
+    result = func(*args)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/urllib/request.py", line 1397, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/urllib/request.py", line 1357, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error EOF occurred in violation of protocol (_ssl.c:1131)>
+/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /home/jiajunlong/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]  0%|          | 24.0k/44.7M [00:00<06:58, 112kB/s]  0%|          | 40.0k/44.7M [00:00<05:57, 131kB/s]  0%|          | 64.0k/44.7M [00:00<05:18, 147kB/s]  0%|          | 112k/44.7M [00:00<03:12, 243kB/s]   0%|          | 176k/44.7M [00:00<02:16, 341kB/s]  1%|          | 248k/44.7M [00:00<01:44, 444kB/s]  1%|          | 360k/44.7M [00:00<01:13, 630kB/s]  1%|1         | 504k/44.7M [00:01<00:54, 850kB/s]  2%|1         | 688k/44.7M [00:01<00:40, 1.14MB/s]  2%|2         | 960k/44.7M [00:01<00:28, 1.60MB/s]  3%|2         | 1.27M/44.7M [00:01<00:21, 2.14MB/s]  4%|3         | 1.70M/44.7M [00:01<00:16, 2.80MB/s]  5%|5         | 2.26M/44.7M [00:01<00:12, 3.69MB/s]  7%|6         | 2.98M/44.7M [00:01<00:09, 4.85MB/s]  9%|9         | 4.02M/44.7M [00:01<00:06, 6.61MB/s] 10%|#         | 4.66M/44.7M [00:02<00:09, 4.29MB/s] 17%|#6        | 7.41M/44.7M [00:02<00:05, 7.39MB/s] 18%|#8        | 8.12M/44.7M [00:02<00:09, 3.99MB/s] 22%|##2       | 9.91M/44.7M [00:03<00:07, 5.17MB/s] 24%|##4       | 10.9M/44.7M [00:03<00:05, 5.95MB/s] 27%|##6       | 11.9M/44.7M [00:03<00:05, 6.61MB/s] 29%|##8       | 12.9M/44.7M [00:03<00:04, 7.33MB/s] 31%|###1      | 13.9M/44.7M [00:03<00:04, 7.97MB/s] 33%|###3      | 15.0M/44.7M [00:03<00:03, 8.67MB/s] 36%|###5      | 16.0M/44.7M [00:03<00:03, 9.20MB/s] 38%|###8      | 17.0M/44.7M [00:03<00:03, 9.64MB/s] 40%|####      | 18.0M/44.7M [00:04<00:04, 6.27MB/s] 43%|####2     | 19.1M/44.7M [00:04<00:03, 7.25MB/s] 45%|####4     | 20.1M/44.7M [00:04<00:04, 5.90MB/s] 47%|####6     | 20.8M/44.7M [00:04<00:05, 4.50MB/s] 49%|####8     | 21.9M/44.7M [00:04<00:04, 5.55MB/s] 51%|#####1    | 22.8M/44.7M [00:04<00:03, 6.46MB/s] 53%|#####3    | 23.8M/44.7M [00:05<00:06, 3.63MB/s] 56%|#####5    | 24.8M/44.7M [00:05<00:04, 4.53MB/s] 57%|#####7    | 25.5M/44.7M [00:05<00:05, 3.64MB/s] 58%|#####8    | 26.1M/44.7M [00:06<00:06, 3.20MB/s] 59%|#####9    | 26.6M/44.7M [00:06<00:06, 2.98MB/s] 62%|######1   | 27.6M/44.7M [00:06<00:04, 3.68MB/s] 64%|######3   | 28.5M/44.7M [00:06<00:03, 4.63MB/s] 66%|######6   | 29.5M/44.7M [00:06<00:02, 5.78MB/s] 68%|######8   | 30.5M/44.7M [00:06<00:02, 6.64MB/s] 70%|#######   | 31.4M/44.7M [00:06<00:01, 7.43MB/s] 73%|#######2  | 32.5M/44.7M [00:07<00:01, 8.33MB/s] 75%|#######4  | 33.4M/44.7M [00:07<00:01, 8.66MB/s] 77%|#######6  | 34.4M/44.7M [00:07<00:01, 8.95MB/s] 79%|#######9  | 35.4M/44.7M [00:07<00:01, 9.35MB/s] 81%|########1 | 36.3M/44.7M [00:07<00:00, 9.49MB/s] 84%|########3 | 37.3M/44.7M [00:07<00:00, 9.72MB/s] 86%|########5 | 38.2M/44.7M [00:07<00:01, 6.44MB/s] 87%|########7 | 39.0M/44.7M [00:07<00:00, 6.75MB/s] 91%|#########1| 40.6M/44.7M [00:08<00:00, 7.94MB/s] 93%|#########2| 41.5M/44.7M [00:08<00:00, 7.77MB/s] 95%|#########5| 42.6M/44.7M [00:08<00:00, 8.62MB/s] 98%|#########7| 43.6M/44.7M [00:08<00:00, 9.09MB/s]100%|#########9| 44.5M/44.7M [00:08<00:00, 9.13MB/s]100%|##########| 44.7M/44.7M [00:08<00:00, 5.48MB/s]
+Traceback (most recent call last):
+  File "../train.py", line 142, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/MLDG.py", line 35, in update
+    inner_opt = get_optimizer(inner_net, self.args, True)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/opt.py", line 50, in get_optimizer
+    params = get_params(alg, args, inner, alias, isteacher)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/opt.py", line 13, in get_params
+    initlr = args.inner_lr
+AttributeError: 'Namespace' object has no attribute 'inner_lr'
+/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Traceback (most recent call last):
+  File "../train.py", line 142, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/MLDG.py", line 57, in update
+    objective += (self.args.mldg_beta * loss_inner_j).item()
+AttributeError: 'Namespace' object has no attribute 'mldg_beta'
+/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Traceback (most recent call last):
+  File "../train.py", line 157, in <module>
+    acc_record[item] = np.mean(np.array([modelopera.accuracy(
+  File "../train.py", line 157, in <listcomp>
+    acc_record[item] = np.mean(np.array([modelopera.accuracy(
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 24, in accuracy
+    x = data[0].cuda().float()
+KeyboardInterrupt
+/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Traceback (most recent call last):
+  File "../train.py", line 116, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 20, in __init__
+    args.num_classes, self.featurizer.in_features, args.classifier)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1269, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'ResNet' object has no attribute 'in_features'
+Traceback (most recent call last):
+  File "../train.py", line 148, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 28, in update
+    loss = F.cross_entropy(self.predict(all_x), all_y)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 38, in predict
+    return self.network(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/common_network.py", line 37, in forward
+    x = self.fc(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (96x1000 and 512x7)
+Traceback (most recent call last):
+  File "../train.py", line 116, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 20, in __init__
+    args.num_classes, self.featurizer.in_features, args.classifier)
+AttributeError: 'function' object has no attribute 'in_features'
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 398882) is killed by signal: Terminated. 
+Traceback (most recent call last):
+  File "../train.py", line 163, in <module>
+    acc_record[item] = np.mean(np.array([modelopera.accuracy(
+  File "../train.py", line 163, in <listcomp>
+    acc_record[item] = np.mean(np.array([modelopera.accuracy(
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 32, in accuracy
+    correct += (p.argmax(1).eq(y).float()).sum().item()
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "../train_test.py", line 185, in <module>
+    if results_keys != last_results_keys:
+NameError: name 'last_results_keys' is not defined
+/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/dbn.py:43: UserWarning: This overload of addmm is deprecated:
+	addmm(Number beta, Tensor input, Number alpha, Tensor mat1, Tensor mat2, *, Tensor out)
+Consider using one of the following signatures instead:
+	addmm(Tensor input, Tensor mat1, Tensor mat2, *, Number beta, Number alpha, Tensor out) (Triggered internally at ../torch/csrc/utils/python_arg_parser.cpp:1420.)
+  sigma = torch.addmm(self.eps, torch.eye(self.num_features).to(X), 1. / m, xc, xc.transpose(0, 1))
+Traceback (most recent call last):
+  File "../train_test.py", line 128, in <module>
+    opt = get_optimizer(algorithm, args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 28, in update
+    loss = F.cross_entropy(self.predict(all_x), all_y)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 38, in predict
+    return self.network(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 173, in forward
+    x = self.layer4(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 53, in forward
+    out = self.bn2(out)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/dbn.py", line 98, in forward
+    X_hat_tmp = self.DBN_Groups[i](X_splits[i])
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/dbn.py", line 54, in forward
+    xn = wm.mm(xc)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 12, in get_fea
+    net = networks.get_network(args.net)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/networks.py", line 12, in get_network
+    return globals()[network_name]()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 187, in resnet18
+    model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 115, in __init__
+    self.bn1 = myNorm.Norm(64)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/normalization.py", line 173, in Norm
+    return _config.norm_methods[_config.norm](*args, **kwargs)
+KeyError: 'ITN'
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 464593) is killed by signal: Terminated. 
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 12, in get_fea
+    net = networks.get_network(args.net)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/networks.py", line 12, in get_network
+    return globals()[network_name]()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 187, in resnet18
+    model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 115, in __init__
+    self.bn1 = myNorm.Norm(64)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/normalization.py", line 173, in Norm
+    return _config.norm_methods[_config.norm](*args, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/iterative_normalization_FlexGroup.py", line 136, in __init__
+    num_groups = (self.num_features-1) // self.num_channels + 1
+TypeError: unsupported operand type(s) for //: 'int' and 'NoneType'
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 464838) is killed by signal: Terminated. 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/util.py", line 357, in _exit_function
+    p.join()
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/popen_fork.py", line 47, in wait
+    return self.poll(os.WNOHANG if timeout == 0.0 else 0)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 464860) is killed by signal: Terminated. 
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 12, in get_fea
+    net = networks.get_network(args.net)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/networks.py", line 12, in get_network
+    return globals()[network_name]()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 187, in resnet18
+    model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 115, in __init__
+    self.bn1 = myNorm.Norm(64)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/normalization.py", line 173, in Norm
+    return _config.norm_methods[_config.norm](*args, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/iterative_normalization_FlexGroup.py", line 136, in __init__
+    num_groups = (self.num_features-1) // self.num_channels + 1
+TypeError: unsupported operand type(s) for //: 'int' and 'NoneType'
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 464984) is killed by signal: Terminated. 
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 11, in get_fea
+    net = networks.get_network(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/networks.py", line 13, in get_network
+    return globals()[args.net](args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/vgg.py", line 76, in vgg
+    model = VGG(make_layers(cfg['E']), args.replace_norm, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/vgg.py", line 63, in make_layers
+    layers += [conv2d, myNorm.Norm(v), nn.ReLU(inplace=True)]
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/extension/normalization/normalization.py", line 174, in Norm
+    return _config.norm_methods[_config.norm](*args, **kwargs)
+KeyError: 'BN#--norm_cfg'
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 20, in __init__
+    args.num_classes, self.featurizer.in_features, args.classifier)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1269, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'VGG' object has no attribute 'in_features'
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 28, in update
+    loss = F.cross_entropy(self.predict(all_x), all_y)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 38, in predict
+    return self.network(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/vgg.py", line 25, in forward
+    x = self.features(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 28, in update
+    loss = F.cross_entropy(self.predict(all_x), all_y)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 38, in predict
+    return self.network(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/common_network.py", line 37, in forward
+    x = self.fc(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (48x25088 and 512x7)
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 28, in update
+    loss = F.cross_entropy(self.predict(all_x), all_y)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 38, in predict
+    return self.network(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/common_network.py", line 37, in forward
+    x = self.fc(x)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (48x25088 and 512x7)
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 35, in update
+    return {'class': loss.item()}
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 35, in update
+    return {'class': loss.item()}
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/RSC.py", line 12, in __init__
+    super(RSC, self).__init__(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 11, in get_fea
+    net = networks.get_network(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/networks.py", line 13, in get_network
+    return globals()[args.net](args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 203, in resnet18
+    model = ResNet(BasicBlock, [2, 2, 2, 2], args.replace_norm, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 148, in __init__
+    self._replace_norm()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 168, in _replace_norm
+    if self.replace_norm['pre_norm']:
+KeyError: 'pre_norm'
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/RSC.py", line 12, in __init__
+    super(RSC, self).__init__(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 11, in get_fea
+    net = networks.get_network(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/networks.py", line 13, in get_network
+    return globals()[args.net](args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 206, in resnet18
+    model = ResNet(BasicBlock, [2, 2, 2, 2], args, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 149, in __init__
+    self._replace_norm()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 169, in _replace_norm
+    if self.args['norm'] == 'BN':
+TypeError: 'Namespace' object is not subscriptable
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/RSC.py", line 58, in update
+    return {'class': loss.item()}
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 18, in __init__
+    self.featurizer = get_fea(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/modelopera.py", line 11, in get_fea
+    net = networks.get_network(args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/networks.py", line 13, in get_network
+    return globals()[args.net](args)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 206, in resnet18
+    model = ResNet(BasicBlock, [2, 2, 2, 2], args, **kwargs)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 149, in __init__
+    self._replace_norm()
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/network/resnet.py", line 171, in _replace_norm
+    if self.replace_norm['pre_norm']:
+KeyError: 'pre_norm'
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 31, in update
+    loss.backward()
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/_tensor.py", line 488, in backward
+    torch.autograd.backward(
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "../train_test.py", line 130, in <module>
+    step_vals = algorithm.update(minibatches_device, opt, sch)
+  File "/home/jiajunlong/Documents/domain/transferlearning/code/DeepDG/alg/algs/ERM.py", line 35, in update
+    return {'class': loss.item()}
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "../train_test.py", line 95, in <module>
+    algorithm = algorithm_class(args).cuda()
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 749, in cuda
+    return self._apply(lambda t: t.cuda(device))
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 664, in _apply
+    param_applied = fn(param)
+  File "/home/jiajunlong/anaconda3/envs/DG/lib/python3.8/site-packages/torch/nn/modules/module.py", line 749, in <lambda>
+    return self._apply(lambda t: t.cuda(device))
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 MiB (GPU 0; 11.76 GiB total capacity; 1.54 MiB already allocated; 52.62 MiB free; 2.00 MiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
